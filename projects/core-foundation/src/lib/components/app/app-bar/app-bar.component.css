@@ -1,0 +1,50 @@
+
+
+.bar-button-inActive {
+    background-color: black;
+}
+
+.thirdappbar {
+    background-color: #222;
+    border-color: #080808;
+}
+
+
+.tooltipcustomclass * {
+    font-size: 1.1em;
+    background: transparent;
+    margin: -2px 0px -2px -3px;
+    padding: 2px 2px 2px 2px;
+}
+
+.tooltipcustomclass .k-callout {
+    background-color: transparent;
+    color: transparent;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+
+
+
+.appbartooltip {
+    padding: 4px 10px;
+    background-color: #000;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.appbartooltipKey {
+    padding: 4px 20px;
+    border: 0px solid red;
+    background-color: green;
+    color: #fff;
+    white-space: nowrap;
+}
+.bar-button-active{
+        background-color: green;
+}
+
+.bar-button-inActive{
+    background-color: transparent;
+}

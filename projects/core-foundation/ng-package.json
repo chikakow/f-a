@@ -1,0 +1,22 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/core-foundation",
+  "lib": {
+    "entryFile": "src/public_api.ts",
+    "umdModuleIds": {
+      "core-foundation": "latest",
+      "lodash": "latest",
+      "@progress/kendo-angular-tooltip": "latest",
+      "@progress/kendo-angular-popup": "latest",
+      "@progress/kendo-angular-dialog": "latest",
+      "@progress/kendo-angular-buttons": "latest",
+      "@progress/kendo-angular-grid": "latest",
+      "@progress/kendo-angular-dropdowns": "latest",
+      "@progress/kendo-angular-excel-export": "latest",
+      "@progress/kendo-angular-dateinputs": "latest",
+      "@progress/kendo-angular-pdf-export": "latest",
+      "@ngx-translate/core": "latest",
+      "@ngx-translate/http-loader": "latest"
+    }
+  }
+}

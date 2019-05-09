@@ -1,0 +1,13 @@
+<div class="chrome-wrapper">
+  <div *ngIf='isShowChrome'>
+    <app-bar></app-bar>
+    <div id="wrapper" class="toggle"
+      [ngClass]="{'sidebarMarginMin':sidebar === true, 'sidebarMarginMax':sidebar === false}">
+      <div id="page-content-wrapper" class="sidebar-margin">
+        <div class="container-fluid">
+          <ng-content></ng-content>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+<div class="slideout-wrapper ps-container ps-theme-default">
+  <span class="k-widget k-dropdown k-header applist-search-dropdown width-one-hundred-percent">
+    <span class="k-dropdown-wrap k-state-default">
+      <kendo-dropdownlist [defaultItem]="defaultItem" [data]="companyData" textField="text" valueField="value"
+        [valuePrimitive]="true" [(ngModel)]="selectedComapanyId"
+        class="k-widget k-state-selected k-dropdown k-header input-block k-invalid k-invalid k-list">
+      </kendo-dropdownlist>
+    </span>
+  </span>
+
+  <span class="k-widget k-dropdown k-header applist-search-dropdown width-one-hundred-percent">
+    <span class="k-dropdown-wrap k-state-default">
+      <kendo-dropdownlist [defaultItem]="defaultItem" [data]="payeeSearchTypeEnum" textField="text" valueField="value"
+        [valuePrimitive]="true" [(ngModel)]="selectedPayee" style="width: 350px;">
+      </kendo-dropdownlist>
+    </span>
+  </span>
+
+
+  <div class="input-group applist-search" *ngIf="selectedPayee!==4">
+    <input class="form-control" placeholder="Search For Payee Name" [(ngModel)]="searchName">
+    <span class="input-group-btn">
+      <button type="button" class="btn btn-default applist-search-icon" style="z-index:0;" (click)="getPayeeDetails()">
+        <i class="fa fa-fw fa-search"></i>
+      </button>
+    </span>
+  </div>
+  <div class="row" *ngIf="selectedPayee===4">
+    <div class="col-md-8">
+      <kendo-datepicker [(value)]="selectedDate" [format]="'MM/dd/yyyy'"></kendo-datepicker>
+    </div>
+    <div class="col-md-4">
+      <button type="button" class="btn btn-default applist-search-icon" style="z-index:0; border: none;">
+        <i class="fa fa-fw fa-search"></i>
+      </button>
+    </div>
+  </div>
+  <div>
+    <app-appoverlay [overlayisBusy]="isOverlayBusy" [overlayisError]="isOverlayError"
+      *ngIf="isOverlayBusy || isOverlayError"></app-appoverlay>
+    <div *ngIf="!isOverlayBusy && !isOverlayError">
+      <div class="panel-tooltip panel-tooltip-bottom" style="width: inherit;">
+        <ul class="app-menu-item-width  k-widget k-reset k-header k-menu k-menu-vertical">
+          <li class="k-item k-state-default k-last " *ngFor="let item of payeeGridData">
+            <span class="k-link k-menu-link">
+              <div class="w-100">
+                <small>Payee: {{item.payeeName}}</small>
+                <br>
+                <small>Check Number : {{item.checkNo}}</small>
+                <br>
+                <small> Check Date :
+                  <i class="date-time-stamp">{{item.checkDts | date }}</i></small>
+                <br>
+                <div class="row">
+                  <div class="col-sm-10">
+                    <small>
+                      Check Amount: ${{item.amount}}
+                    </small>
+                  </div>
+                  <div>
+                    <div (click)="print()">
+                      <i style="color: #555;" class="fa fa-print fa-lg"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf='errorMessage'>
+  <div class="k-overlay"></div>
+  <div class="k-widget k-window k-window-titleless msgmodal errorMessage">
+    <div kendo-window="mes.messagebox" class="msgmodal-wrapper  k-window-content k-content msgmodal"
+      style="overflow: hidden;" tabindex="0">
+      <div class="msgmodal-icon-header error">
+        <i class=" fa fa-inverse fa-4x fa-exclamation-circle"></i>
+      </div>
+      <div class="msgmodal-content-container">
+        <div>
+          <h3>Missing Search Criteria</h3>
+          <p>
+            Please enter a value to search for and try again.
+          </p>
+        </div>
+        <button type="button" class="k-button k-primary input-lg" (click)="errorPopup()">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>

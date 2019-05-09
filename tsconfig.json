@@ -1,0 +1,41 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "core-foundation": [
+        "wwwroot/dist/core-foundation"
+      ],
+      "core-foundation/*": [
+        "wwwroot/dist/core-foundation/*"
+      ],
+      "@core-foundation/*": [
+        "projects/core-foundation/src/*"
+      ],
+      "mini-portal": [
+        "dist/mini-portal"
+      ],
+      "mini-portal/*": [
+        "dist/mini-portal/*"
+      ],
+      "@mini-portal/*": [
+        "projects/mini-portal/src/*"
+      ]
+    }
+  }
+}

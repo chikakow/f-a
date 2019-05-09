@@ -1,0 +1,30 @@
+<div>
+        <div class="appbar secondappbar thirdappbar">
+                <ul class="nav navbar-vertical" style="display: list-item">
+                        <li *ngFor="let item of appJson.menuItems">
+                                <div kendoTooltip tooltipClass="tooltipcustomclass" position="right"
+                                        [tooltipTemplate]="tooltiptemplate" filter=".sidenavbar-item">
+                                        <button type="button" class="sidenavbar-item sidenavbar-item-unselected"
+                                                (click)="hideSideBar(item.accesskey)"
+                                                [ngClass]="{'bar-button-inActive':sideBar === false,'bar-button-active': sideBar === true }">
+                                                <span class="{{ item.icon | translate }}"></span>
+                                        </button>
+
+                                        <ng-template #tooltiptemplate>
+                                                <span class="appbartooltip">{{format(item.name)}}</span>
+                                                <span
+                                                        class="appbartooltipKey">{{formatKey(item.accesskey).toUpperCase()}}</span>
+                                        </ng-template>
+                                </div>
+                        </li>
+                </ul>
+        </div>
+        <div *ngIf="sideBar">
+                <div *ngIf="isQuickLoolUp; else templateName">
+                        <core-quicklookup-slideout></core-quicklookup-slideout>
+                </div>
+                <ng-template #templateName>
+                        <app-side-bar></app-side-bar>
+                </ng-template>
+        </div>
+</div>

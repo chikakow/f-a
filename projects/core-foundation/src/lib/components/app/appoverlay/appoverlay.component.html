@@ -1,0 +1,19 @@
+<div class="overlay-target">
+    <div class="overlay-blocker" *ngIf="overlayisError">
+        <div class="overlay-content">
+            <div>
+                <i class="fa ats-warning-doc fa-4x"></i>
+                <br/>
+                <span class="ng-binding">Uh oh, something happened while loading the data.</span>
+            </div>
+        </div>
+    </div>
+    <div class="overlay-blocker" *ngIf="overlayisBusy">
+        <div class="overlay-content">
+            <div>
+                <i class="fa fa-circle-o-notch fa-4x fa-spin"></i>
+            </div>
+        </div>
+    </div>
+</div>
+

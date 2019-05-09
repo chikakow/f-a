@@ -1,0 +1,18 @@
+<div class="slideout-wrapper ps-container ps-theme-default">
+    <div class="slideout-header">
+        <a (click)="scrollToElement('RefundsManagement')">{{ appName | translate }}</a>
+    </div>
+    <div class="treeview-cursor slideout-content k-widget k-treeview">
+        <ul class="k-group k-treeview-lines" role="tree">
+            <li role="treeitem" class="k-item k-first" *ngFor="let dataItem of nodeList let i = index">
+                <div class="k-top" *ngIf="i!=0" [ngClass]="{'active' : selectedItem == dataItem}" (click)="scrollToElement(dataItem)">
+                    <span class="k-in">
+                        <span>
+                            <span class="ng-binding">{{text[dataItem]}}</span>
+                        </span>
+                    </span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+.applist-search-dropdown {
+    background-color: #ffffff !important;
+    border-bottom: solid 1px #b1b1b1;
+    border-right: none;
+    border-radius: 0px;
+    border-top: none;
+}
+
+.btn-default {
+    color: #333;
+    background-color: #fff;
+
+}
+
+.applist-search-icon {
+    border-radius: 0px;
+    border: 1px solid #ffffff;
+    border-left: 0px;
+    border-bottom: solid 1px #b1b1b1;
+}
+
+.applist-search-icon:focus {
+    border-radius: 0px;
+    border: 1px solid #ffffff;
+    border-left: 0px;
+    border-bottom: solid 1px #b1b1b1;
+}
+.applist-search-icon:hover {
+    border-radius: 0px;
+    border: 1px solid #ffffff;
+    border-left: 0px;
+    border-bottom: solid 1px #b1b1b1;
+}
+
+.datePickerWidth {
+    width: 204px;
+}
+
+.errorMessage{
+    min-width: 90px; 
+    min-height: 50px;
+    position: fixed;
+    z-index: 10005; 
+    opacity: 1; 
+    transform: scale(1);
+}
+.k-link small{
+    font-size: 90% !important;
+    color: #444 !important;
+}
+
+::ng-deep .k-dropdown .k-dropdown-wrap{
+    background-color:none; 
+    background-image: none;
+}
